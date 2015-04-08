@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/foundation/4.3.2/css/foundation.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.js"></script>
+</head>
+<body>
+    <div my-directive
+         my-url1="http://google.com"
+    my-link-text1="Click me"></div>
+    <script>
+        angular.module('myApp', [])
+            .directive('myDirective', function() {
+                return {
+                    restrict: 'AE',
+                    replace: true,
+                    scope: {
+                        myUrl: '@',
+                        myLinkText: '@myLinkText1'
+                    },
+                    template: '<a href="{{myUrl1}}">{{myLinkText}}</a>'
+                };
+            });
+    </script>
+</body>
+</html>
