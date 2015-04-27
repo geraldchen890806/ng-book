@@ -46,6 +46,17 @@
                     }
                 }
             });
+    angular.module('myAp1p', [])
+            .provider('gg', function($http) {
+                var s = 1
+                return {
+                    s1:function () {
+                    },
+                    s2:"asd",
+                    $get: function () {
+                    }
+                }
+            }())
 </script>
 </body>
 </html>
